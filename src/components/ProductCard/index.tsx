@@ -1,10 +1,15 @@
 import { StyleSheet, Text, View, Pressable, Image } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome5'
+import { NavigationContainer } from '@react-navigation/native'
+import { NavigationEvents } from 'react-navigation'
 
-const ProductCard = ({name, detail, price, image}) => {
+const ProductCard = ({name, detail, price, image, nav}) => {
   return (
     <View style={styles.productCard}>
+        <Pressable
+        onPress={() => nav.navigate('Detail') }
+        >
     <Image
     style={styles.image}
     source={{
@@ -19,9 +24,10 @@ const ProductCard = ({name, detail, price, image}) => {
     <View style={styles.pricebtn}>
         <Text style={{color:'black', marginLeft:5}}>{price}</Text>
         <Pressable>
-        <Icon name="shopping-cart" size={25} style={{marginRight:5}} color="#3546CB" />
+        <Icon name="cart-plus" size={25} style={{marginRight:5}} color="#3546CB" />
         </Pressable>
     </View>
+    </Pressable>
     </View>
   )
 }

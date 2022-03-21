@@ -57,10 +57,10 @@ const data:any = [
     }
   ]
 
-const Home = () => {
+const Home = ({navigation}) => {
 
     const renderItem:any = ({ item }) => (
-        <ProductCard name={item.name} price={item.price} detail={item.detail} image={item.image} />
+        <ProductCard name={item.name} price={item.price} detail={item.detail} image={item.image} nav={navigation} />
       );
     
 
