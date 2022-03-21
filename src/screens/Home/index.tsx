@@ -1,7 +1,7 @@
 import { Image, Pressable, StyleSheet, Text, View, ScrollView, FlatList } from 'react-native'
 import React from 'react'
 import UserAvatar from 'react-native-user-avatar';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import ProductCard from '../../components/ProductCard'
 
 
@@ -67,10 +67,10 @@ const Home = () => {
   return (
     <View style={styles.container}>
         <View style={styles.header}>
-            <View >
-            <Text style={{color:'black'}}><UserAvatar size={35} style={{}} imageStyle={{}} name="Avishay Bar" src="https://res.cloudinary.com/deex1bwvl/image/upload/v1647738498/Bluescope/alex-suprun-ZHvM3XIOHoE-unsplash_ptlaxf.jpg" />Hi, Louis</Text>
+            <View  style={{flexDirection:'row'}}>
+            <UserAvatar size={35} style={{height:0, marginTop:10}} imageStyle={{}} name="Avishay Bar" src="https://res.cloudinary.com/deex1bwvl/image/upload/v1647738498/Bluescope/alex-suprun-ZHvM3XIOHoE-unsplash_ptlaxf.jpg" /><Text style={{color:'black'}}>Hi, Louis</Text>
             </View>
-            <Icon name="filter" size={30} color="#BDBDBD" />
+            <Icon name="shopping-cart" size={45} style={{marginRight:5}} color="#3546CB" />
         </View>
         <View style={styles.product}>
             <Text style={{color:'black', marginBottom:10}}>
