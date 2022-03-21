@@ -129,6 +129,6 @@ const styles = StyleSheet.create({
           position:'absolute'
     },
     empty:{
-      
+      display:'none'
     }
 })
