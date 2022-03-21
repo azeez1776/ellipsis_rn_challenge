@@ -1,10 +1,18 @@
 import { StyleSheet, Text, View, Pressable, Image } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome5'
-import { NavigationContainer } from '@react-navigation/native'
-import { NavigationEvents } from 'react-navigation'
+import { useDispatch, useSelector } from 'react-redux'
+import { increment } from '../../features/counter/counterSlice'
 
 const ProductCard = ({name, detail, price, image, nav}) => {
+
+    type RootState = {
+        counter,value:number
+    }
+
+    const count = useSelector((state:RootState) => state.counter.value)
+    const dispatch = useDispatch()
+
   return (
     <View style={styles.productCard}>
         <Pressable
@@ -23,7 +31,9 @@ const ProductCard = ({name, detail, price, image, nav}) => {
     </View>
     <View style={styles.pricebtn}>
         <Text style={{color:'black', marginLeft:5}}>{price}</Text>
-        <Pressable>
+        <Pressable
+        onPress={() => {dispatch(increment())}}
+        >
         <Icon name="cart-plus" size={25} style={{marginRight:5}} color="#3546CB" />
         </Pressable>
     </View>

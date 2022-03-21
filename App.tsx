@@ -3,6 +3,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/Home';
 import DetailScreen from './src/screens/Details'
 import React from 'react';
+import { Provider } from 'react-redux';
+import store from './src/app/store'
 import {
  View
 } from 'react-native';
@@ -12,6 +14,7 @@ const App = () => {
 
   const Stack = createNativeStackNavigator()
   return(
+    <Provider store={store}>
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
@@ -23,6 +26,7 @@ const App = () => {
         <Stack.Screen name="Detail" component={DetailScreen}  options={{headerShadowVisible: false}} />
        </Stack.Navigator>
     </NavigationContainer>
+    </Provider>
   )
 }
 
