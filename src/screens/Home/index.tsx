@@ -4,6 +4,14 @@ import React from 'react'
 const Home = () => {
   return (
     <View>
+        <View>
+            <View>
+                
+            </View>
+        </View>
+        <View>
+            {/* Products */}
+        </View>
     </View>
   )
 }
