@@ -3,6 +3,7 @@ import React from 'react'
 import UserAvatar from 'react-native-user-avatar';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ProductCard from '../../components/ProductCard'
+import { useSelector } from 'react-redux';
 
 
 const data:any = [
@@ -59,6 +60,12 @@ const data:any = [
 
 const Home = ({navigation}) => {
 
+  type RootState = {
+    counter,value:number
+}
+
+const count = useSelector((state:RootState) => state.counter.value)
+
     const renderItem:any = ({ item }) => (
         <ProductCard name={item.name} price={item.price} detail={item.detail} image={item.image} nav={navigation} />
       );
@@ -70,7 +77,12 @@ const Home = ({navigation}) => {
             <View  style={{flexDirection:'row'}}>
             <UserAvatar size={35} style={{height:0, marginTop:10}} imageStyle={{}} name="Avishay Bar" src="https://res.cloudinary.com/deex1bwvl/image/upload/v1647738498/Bluescope/alex-suprun-ZHvM3XIOHoE-unsplash_ptlaxf.jpg" /><Text style={{color:'black'}}>Hi, Louis</Text>
             </View>
+            <View>
             <Icon name="shopping-cart" size={45} style={{marginRight:5}} color="#3546CB" />
+            <View style={count?styles.full:styles.empty}>
+            <Text style={{color:'white'}}>{count}</Text>
+            </View>
+            </View>
         </View>
         <View style={styles.product}>
             <Text style={{color:'black', marginBottom:10}}>
@@ -108,12 +120,15 @@ const styles = StyleSheet.create({
         flex:0.9,
         width:'90%',
     },
-//    products:{
-//        flex:1,
-//        flexDirection:'row',
-//        width:'100%',
-//        justifyContent:'space-evenly',
-//        flexWrap:'wrap',
-//        height:'800%'
-//    },
+    full:{
+      backgroundColor:'black',
+       width:20,
+        borderRadius:10, 
+        alignItems:'center',
+         justifyContent:'center',
+          position:'absolute'
+    },
+    empty:{
+      
+    }
 })
