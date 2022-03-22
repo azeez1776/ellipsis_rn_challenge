@@ -27,7 +27,7 @@ const Cart = ({navigation}) => {
       </View>
 <Text style={{color:'black', textAlign:'center', marginBottom:10, fontWeight:'bold', fontSize:20}}>Cart</Text>
 <FlatList
-            style={{ width:'100%'}}
+            style={{ width:'100%',height:350}}
         data={cart}
         renderItem={renderItem}
         keyExtractor={item => item.id}
@@ -64,7 +64,9 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center',
         flexDirection:'row',
-        flex:0.8
+        // flex:0.8,
+        height:40,
+        marginTop:10
     }
   
 })

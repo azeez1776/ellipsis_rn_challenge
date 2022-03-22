@@ -27,7 +27,7 @@ const data:any = [
         id:3,
       name: "Camping Set",
       detail: "Everything you need when camping.",
-      price: "99",
+      price: "1,000,000 Tsh",
       image: "https://res.cloudinary.com/deex1bwvl/image/upload/v1636020072/samples/ecommerce/accessories-bag.jpg"
     },
     {
@@ -71,7 +71,7 @@ const dispatch = useDispatch()
 const count = useSelector((state:RootState) => state.counter.value)
 
     const renderItem:any = ({ item }) => (
-        <ProductCard name={item.name} price={item.price} detail={item.detail} image={item.image} nav={navigation} prodFunc={() => {
+        <ProductCard id={item.id} name={item.name} price={item.price} detail={item.detail} image={item.image} nav={navigation}  prodFunc={() => {
           dispatch(addToCart(item))
           dispatch(increment())
         } } />
@@ -83,7 +83,7 @@ const count = useSelector((state:RootState) => state.counter.value)
         <View style={styles.header}>
             <View  style={{flexDirection:'row'}}>
             <UserAvatar size={35} style={{height:0, marginTop:10}} imageStyle={{}} name="Avishay Bar" src="https://res.cloudinary.com/deex1bwvl/image/upload/v1647738498/Bluescope/alex-suprun-ZHvM3XIOHoE-unsplash_ptlaxf.jpg" />
-            <Text style={{color:'black',fontWeight:'bold', fontSize:15,marginLeft:10}}>Hi, Louis</Text>
+            <Text style={{color:'black',fontWeight:'bold', fontSize:15,marginLeft:10}}>Hi, Samatar</Text>
             </View>
             <View>
               <Pressable

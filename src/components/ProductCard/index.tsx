@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import { increment } from '../../features/counter/counterSlice'
 import { addToCart } from '../../features/cart/cartSlice'
 
-const ProductCard = ({name, detail, price, image, nav, prodFunc}) => {
+const ProductCard = ({id,name, detail, price, image, nav, prodFunc}) => {
 
 
 
@@ -13,6 +13,7 @@ const ProductCard = ({name, detail, price, image, nav, prodFunc}) => {
     <View style={styles.productCard}>
         <Pressable
         onPress={() => nav.navigate('Detail',{
+            id:id,
             name:name,
             detail:detail,
             price:price,

@@ -1,8 +1,9 @@
 import { StyleSheet, Text, View, Image, Pressable, ImageBackground } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { useSelector } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../../features/cart/cartSlice';
+import { increment } from '../../features/counter/counterSlice';
 const Detail = ({route,navigation}) => {
 
   type RootState = {
@@ -10,8 +11,12 @@ const Detail = ({route,navigation}) => {
 }
 
 const count = useSelector((state:RootState) => state.counter.value)
+const dispatch = useDispatch()
 
-const {name, detail, price, image} = route.params;
+const {id, name, detail, price, image} = route.params;
+
+
+
 
   return (
     <View style={styles.container}>
@@ -57,8 +62,13 @@ const {name, detail, price, image} = route.params;
       <View style={styles.btn}>
       <Pressable
         style={({pressed}) => [{backgroundColor:pressed?'#6574e6':'#3546CB'},styles.chat]}
+        onPress={() => {
+            dispatch(addToCart({id, name,detail,price,image}))
+            dispatch(increment())
+            
+        }}
       >
-          <Icon name="shopping-cart" size={20} color="#ffffff"/>
+          <Icon name="cart-plus" size={20} color="#ffffff"/>
           <Text style={{color:'white', marginLeft:5}}>Add to cart</Text>
       </Pressable>
       </View>
