@@ -20,18 +20,26 @@ const Cart = ({navigation}) => {
     <View style={styles.container}>
       <View style={styles.header}>
           <Pressable
-          onPress={() => navigation.navigate('Home')}
+          onPress={() => navigation.goBack()}
           >
           <Icon name="close" color="#3546CB" size={35}/>
             </Pressable>
       </View>
-<Text style={{color:'black', textAlign:'center', marginBottom:10}}>Cart</Text>
+<Text style={{color:'black', textAlign:'center', marginBottom:10, fontWeight:'bold', fontSize:20}}>Cart</Text>
 <FlatList
             style={{ width:'100%'}}
         data={cart}
         renderItem={renderItem}
         keyExtractor={item => item.id}
       />
+      <View style={{flex:0.4, alignItems:'center', width:'100%'}}>
+      <Pressable
+        style={({pressed}) => [{backgroundColor:pressed?'#6574e6':'#3546CB'},styles.pay]}
+      >
+         <Icon name="money" size={20} color="#ffffff"/>
+          <Text style={{color:'white', marginLeft:6}}>Pay Now</Text>
+      </Pressable>
+      </View>
     </View>
   )
 }
@@ -45,10 +53,18 @@ const styles = StyleSheet.create({
         alignItems:'center'
     },
     header:{
-        flex:0.1,
+        flex:0.3,
         margin:10,
         alignItems:'flex-start',
         width:'90%'
     },
+    pay:{
+        width:'50%',
+        borderRadius:5,
+        alignItems:'center',
+        justifyContent:'center',
+        flexDirection:'row',
+        flex:0.8
+    }
   
 })

@@ -11,9 +11,9 @@ const CartItem = ({name, detail, price, number, image}) => {
         }}
      />
      <View style={{flexDirection:'row', justifyContent:'space-between', width:'50%', marginLeft:10}}>
-         <View style={{justifyContent:'space-around'}}>
-            <Text style={{color:'black'}}>{name}</Text>
-            <Text style={{color:'black'}}>{detail}</Text>
+         <View style={{justifyContent:'space-around', width:120}}>
+            <Text style={{color:'black', fontWeight:'bold'}}>{name}</Text>
+            <Text style={{color:'#BDBDBD'}}>{detail}</Text>
          </View>
          <View style={{justifyContent:'space-around'}}>
          <View style={styles.tagger}>
@@ -33,7 +33,7 @@ export default CartItem
 const styles = StyleSheet.create({
     cartItem:{
         height:100,
-        width:'90%',
+        width:'95%',
         borderWidth:0.5,
         borderRadius:7,
         borderColor:'#BDBDBD',
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         flexDirection:'row'
     },
     img:{
-        width:'40%',
+        width:'30%',
         borderBottomLeftRadius:7,
         borderTopLeftRadius:7,
         height:100
@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
     tagger:{
         backgroundColor:'#EFF1FF',
         borderRadius:5,
-        width:70,
         alignItems:'center',
         justifyContent:'center'
     }

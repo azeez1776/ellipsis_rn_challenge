@@ -82,7 +82,8 @@ const count = useSelector((state:RootState) => state.counter.value)
     <View style={styles.container}>
         <View style={styles.header}>
             <View  style={{flexDirection:'row'}}>
-            <UserAvatar size={35} style={{height:0, marginTop:10}} imageStyle={{}} name="Avishay Bar" src="https://res.cloudinary.com/deex1bwvl/image/upload/v1647738498/Bluescope/alex-suprun-ZHvM3XIOHoE-unsplash_ptlaxf.jpg" /><Text style={{color:'black'}}>Hi, Louis</Text>
+            <UserAvatar size={35} style={{height:0, marginTop:10}} imageStyle={{}} name="Avishay Bar" src="https://res.cloudinary.com/deex1bwvl/image/upload/v1647738498/Bluescope/alex-suprun-ZHvM3XIOHoE-unsplash_ptlaxf.jpg" />
+            <Text style={{color:'black',fontWeight:'bold', fontSize:15,marginLeft:10}}>Hi, Louis</Text>
             </View>
             <View>
               <Pressable
@@ -96,7 +97,7 @@ const count = useSelector((state:RootState) => state.counter.value)
             </View>
         </View>
         <View style={styles.product}>
-            <Text style={{color:'black', marginBottom:10}}>
+            <Text style={{color:'black', textAlign:'center', marginBottom:10, fontWeight:'bold', fontSize:20}}>
                 Products
             </Text>
             <FlatList

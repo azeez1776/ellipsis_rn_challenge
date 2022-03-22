@@ -12,7 +12,12 @@ const ProductCard = ({name, detail, price, image, nav, prodFunc}) => {
   return (
     <View style={styles.productCard}>
         <Pressable
-        onPress={() => nav.navigate('Detail') }
+        onPress={() => nav.navigate('Detail',{
+            name:name,
+            detail:detail,
+            price:price,
+            image:image
+        }) }
         >
     <Image
     style={styles.image}

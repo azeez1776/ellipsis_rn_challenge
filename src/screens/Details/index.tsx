@@ -3,7 +3,7 @@ import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useSelector } from 'react-redux';
 
-const Detail = ({navigation}) => {
+const Detail = ({route,navigation}) => {
 
   type RootState = {
     counter,value:number
@@ -11,13 +11,15 @@ const Detail = ({navigation}) => {
 
 const count = useSelector((state:RootState) => state.counter.value)
 
+const {name, detail, price, image} = route.params;
+
   return (
     <View style={styles.container}>
       {/* <View style={styles.img}> */}
       <ImageBackground
     style={styles.detailImg}
     source={{
-        uri:'https://res.cloudinary.com/deex1bwvl/image/upload/v1647545617/Bluescope/photo-1464146072230-91cabc968266_vhw4ki.jpg'
+        uri:image
     }}
     >
       <View style={{flexDirection:'row', justifyContent:'space-between', width:'100%', marginTop:10,}}>
@@ -28,10 +30,14 @@ const count = useSelector((state:RootState) => state.counter.value)
       <Icon name="angle-left" size={35} color="#3546CB" style={{}}/>
       </View>
       </Pressable>
-      <Pressable>
-            <Icon name="shopping-cart" size={45} style={{marginRight:5}} color="#3546CB" />
+      <Pressable
+      onPress={()=> navigation.navigate('Cart')}
+      >
+        <View style={{width:50, height:50, backgroundColor:'#EFF1FFA6', alignItems:'center',justifyContent:'center', borderRadius:10, marginRight:5}}>
+            <Icon name="shopping-cart" size={45} style={{}} color="#3546CB" />
             <View style={count?styles.full:styles.empty}>
             <Text style={{color:'white'}}>{count}</Text>
+            </View>
             </View>
       </Pressable>
       </View>
@@ -39,13 +45,13 @@ const count = useSelector((state:RootState) => state.counter.value)
   
       <View style={styles.detail}>
       <View style={{flexDirection:'row', justifyContent:'space-between', width:'90%', marginBottom:2}}>
-            <Text style={{color:'black'}}>Richyaris Kansas</Text>
-            <Text style={{color:'#BDBDBD'}}>Tsh 200,000,000</Text>
+            <Text style={{color:'black'}}>{name}</Text>
+            <Text style={{color:'#3546CB'}}>{price}</Text>
       </View>
         </View>
       <View style={styles.desc}>
          <Text style={{fontSize:16, color:'black'}}>Description</Text>
-         <Text style={{color:'black'}}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus possimus magni rerum numquam eaque asperiores soluta debitis, tenetur autem similique excepturi rem vel blanditiis neque sequi beatae fugit quibusdam cupiditate.</Text>
+         <Text style={{color:'black'}}>{detail}</Text>
       </View>
 
       <View style={styles.btn}>
