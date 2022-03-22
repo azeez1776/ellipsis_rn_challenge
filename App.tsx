@@ -6,6 +6,7 @@ import CartScreen from './src/screens/Cart'
 import React from 'react';
 import { Provider } from 'react-redux';
 import store from './src/app/store'
+import LoginScreen from './src/screens/Login'
 import {
  View
 } from 'react-native';
@@ -21,11 +22,12 @@ const App = () => {
         screenOptions={{
       headerShown: false,
     }}
-    initialRouteName="Home"
+    initialRouteName="Login"
       >
         <Stack.Screen name="Home" component={HomeScreen}  options={{headerShadowVisible: false}} />
         <Stack.Screen name="Detail" component={DetailScreen}  options={{headerShadowVisible: false}} />
         <Stack.Screen name="Cart" component={CartScreen}  options={{headerShadowVisible: false}} />
+        <Stack.Screen name="Login" component={LoginScreen}  options={{headerShadowVisible: false}} />
        </Stack.Navigator>
     </NavigationContainer>
     </Provider>
