@@ -1,17 +1,13 @@
 import { StyleSheet, Text, View, Pressable, Image } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome5'
-import { useDispatch, useSelector } from 'react-redux'
-import { addToCart, increment } from '../../features/counter/counterSlice'
+import { useDispatch } from 'react-redux'
+import { increment } from '../../features/counter/counterSlice'
+import { addToCart } from '../../features/cart/cartSlice'
 
-const ProductCard = ({name, detail, price, image, nav, prod}) => {
+const ProductCard = ({name, detail, price, image, nav, prodFunc}) => {
 
-    type RootState = {
-        counter,value:number
-    }
 
-    const count = useSelector((state:RootState) => state.counter.value)
-    const dispatch = useDispatch()
 
   return (
     <View style={styles.productCard}>
@@ -32,11 +28,7 @@ const ProductCard = ({name, detail, price, image, nav, prod}) => {
     <View style={styles.pricebtn}>
         <Text style={{color:'black', marginLeft:5}}>{price}</Text>
         <Pressable
-        onPress={(prod) => {
-            dispatch(increment())
-            dispatch(addToCart(prod))
-        }
-        }
+        onPress={prodFunc}
         >
         <Icon name="cart-plus" size={25} style={{marginRight:5}} color="#3546CB" />
         </Pressable>

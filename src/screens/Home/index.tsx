@@ -3,7 +3,9 @@ import React from 'react'
 import UserAvatar from 'react-native-user-avatar';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ProductCard from '../../components/ProductCard'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../../features/cart/cartSlice';
+import { increment } from '../../features/counter/counterSlice';
 
 
 const data:any = [
@@ -64,10 +66,15 @@ const Home = ({navigation}) => {
     counter,value:number
 }
 
+const dispatch = useDispatch()
+
 const count = useSelector((state:RootState) => state.counter.value)
 
     const renderItem:any = ({ item }) => (
-        <ProductCard name={item.name} price={item.price} detail={item.detail} image={item.image} nav={navigation} prod={item} />
+        <ProductCard name={item.name} price={item.price} detail={item.detail} image={item.image} nav={navigation} prodFunc={() => {
+          dispatch(addToCart(item))
+          dispatch(increment())
+        } } />
       );
     
 
@@ -78,7 +85,11 @@ const count = useSelector((state:RootState) => state.counter.value)
             <UserAvatar size={35} style={{height:0, marginTop:10}} imageStyle={{}} name="Avishay Bar" src="https://res.cloudinary.com/deex1bwvl/image/upload/v1647738498/Bluescope/alex-suprun-ZHvM3XIOHoE-unsplash_ptlaxf.jpg" /><Text style={{color:'black'}}>Hi, Louis</Text>
             </View>
             <View>
+              <Pressable
+              onPress={() => { navigation.navigate('Cart')}}
+              >
             <Icon name="shopping-cart" size={45} style={{marginRight:5}} color="#3546CB" />
+                </Pressable>
             <View style={count?styles.full:styles.empty}>
             <Text style={{color:'white'}}>{count}</Text>
             </View>

@@ -20,7 +20,7 @@ const CartItem = ({name, detail, price, number, image}) => {
           <Text style={styles.tags}>{price}</Text>
           </View>
             <View style={styles.tagger}>
-          <Text style={styles.tags}>No. {number}</Text>
+          <Text style={styles.tags}>{`No. ${number}`}</Text>
           </View>
          </View>
      </View>

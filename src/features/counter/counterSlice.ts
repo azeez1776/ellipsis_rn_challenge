@@ -11,21 +11,9 @@ export const counterSlice = createSlice({
         increment: (state) => {
             state.value += 1
         },
-        addToCart:(state, action) => {
-            const itemIndex = state.cartItems.findIndex(
-            (item) => item.id === action.payload.id
-            );
-            if(itemIndex>=0){
-                state.cartItems[itemIndex].quantity =+1 ;
-            }
-            else{
-                const tempItem = {...action.payload, quantity:1};
-                state.cartItems.push(tempItem)
-            }
-        }
     }
 }
 )
 
-export const { increment, addToCart } = counterSlice.actions;
+export const { increment} = counterSlice.actions;
 export default counterSlice.reducer;

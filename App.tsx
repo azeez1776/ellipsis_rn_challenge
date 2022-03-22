@@ -21,7 +21,7 @@ const App = () => {
         screenOptions={{
       headerShown: false,
     }}
-    initialRouteName="Cart"
+    initialRouteName="Home"
       >
         <Stack.Screen name="Home" component={HomeScreen}  options={{headerShadowVisible: false}} />
         <Stack.Screen name="Detail" component={DetailScreen}  options={{headerShadowVisible: false}} />

@@ -1,26 +1,36 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View, FlatList, Pressable } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
-import CardItem from '../../components/CartItem'
+import CartItem from '../../components/CartItem'
+import { useSelector } from 'react-redux';
 
-const Cart = () => {
+const Cart = ({navigation}) => {
+
+    type RootState = {
+        cart,value:number
+    }
+
+    const cart = useSelector((state:RootState) => state.cart.cartItems)
 
     const renderItem:any = ({ item }) => (
-        <CardItem  />
+        <CartItem name={item.name} detail={item.detail} price={item.price} image={item.image} number={item.quantity} />
       );
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
+          <Pressable
+          onPress={() => navigation.navigate('Home')}
+          >
           <Icon name="close" color="#3546CB" size={35}/>
+            </Pressable>
       </View>
 <Text style={{color:'black', textAlign:'center', marginBottom:10}}>Cart</Text>
 <FlatList
             style={{ width:'100%'}}
-        data={data}
+        data={cart}
         renderItem={renderItem}
         keyExtractor={item => item.id}
-        numColumns={2}
       />
     </View>
   )
