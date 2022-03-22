@@ -1,10 +1,13 @@
-import { StyleSheet, Text, View, TextInput, Pressable } from 'react-native'
+import { StyleSheet, Text, View, TextInput, Pressable, KeyboardAvoidingView, Platform } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 const Login = ({navigation}) => {
   return (
-    <View style={styles.container}>
+      <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={styles.container}
+      >
         <View style={styles.header}>
 <Text style={{color:'#3546CB', fontSize:32, fontWeight:'bold'}}>Smart Store</Text>
         </View>
@@ -45,7 +48,7 @@ const Login = ({navigation}) => {
        </View>
       </View>
       </View>
-    </View>
+    </KeyboardAvoidingView>
   )
 }
 
@@ -93,7 +96,8 @@ chat:{
     borderRadius:5,
     alignItems:'center',
     justifyContent:'center',
-    flexDirection:'row'
+    flexDirection:'row',
+    height: 40,
 },
 social:{
     flex:0.3,
