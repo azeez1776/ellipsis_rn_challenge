@@ -67,7 +67,7 @@ const Home = ({navigation}) => {
 const count = useSelector((state:RootState) => state.counter.value)
 
     const renderItem:any = ({ item }) => (
-        <ProductCard name={item.name} price={item.price} detail={item.detail} image={item.image} nav={navigation} />
+        <ProductCard name={item.name} price={item.price} detail={item.detail} image={item.image} nav={navigation} prod={item} />
       );
     
 
