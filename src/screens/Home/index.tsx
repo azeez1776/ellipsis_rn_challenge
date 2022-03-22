@@ -1,4 +1,4 @@
-import { Image, Pressable, StyleSheet, Text, View, ScrollView, FlatList } from 'react-native'
+import {Pressable, StyleSheet, Text, View, ScrollView, FlatList } from 'react-native'
 import React from 'react'
 import UserAvatar from 'react-native-user-avatar';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -8,6 +8,7 @@ import { addToCart } from '../../features/cart/cartSlice';
 import { increment } from '../../features/counter/counterSlice';
 
 
+//Data I used
 const data:any = [
     {
         id:1,
@@ -58,8 +59,10 @@ const data:any = [
       price: "10,000 Tsh",
       image: "https://res.cloudinary.com/deex1bwvl/image/upload/v1636020063/samples/food/dessert.jpg"
     }
-  ]
+  ];
 
+
+//Home page
 const Home = ({navigation}) => {
 
   type RootState = {

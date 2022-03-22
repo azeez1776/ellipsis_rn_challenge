@@ -1,9 +1,7 @@
 import { StyleSheet, Text, View, Pressable, Image } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome5'
-import { useDispatch } from 'react-redux'
-import { increment } from '../../features/counter/counterSlice'
-import { addToCart } from '../../features/cart/cartSlice'
+
 
 const ProductCard = ({id,name, detail, price, image, nav, prodFunc}) => {
 
