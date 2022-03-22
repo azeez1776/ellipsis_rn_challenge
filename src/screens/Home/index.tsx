@@ -11,52 +11,52 @@ import { increment } from '../../features/counter/counterSlice';
 const data:any = [
     {
         id:1,
-      name: "hero Product",
-      detail: "Lorem ipsum dolor sit amet",
-      price: "99",
+      name: "Rolex M1",
+      detail: "World classic watch.",
+      price: "200,000 Tsh",
       image: "https://res.cloudinary.com/deex1bwvl/image/upload/v1636020062/samples/ecommerce/analog-classic.jpg"
     },
     {
         id:2,
-      name: "Product 1",
-      detail: "Lorem ipsum dolor sit amet",
-      price: "99",
+      name: "Leather bag",
+      detail: "Water resistant, cow skin.",
+      price: "500,000 Tsh",
       image: "https://res.cloudinary.com/deex1bwvl/image/upload/v1636020071/samples/ecommerce/leather-bag-gray.jpg"
     },
     {
         id:3,
-      name: "Product 2",
-      detail: "Lorem ipsum dolor sit amet",
+      name: "Camping Set",
+      detail: "Everything you need when camping.",
       price: "99",
       image: "https://res.cloudinary.com/deex1bwvl/image/upload/v1636020072/samples/ecommerce/accessories-bag.jpg"
     },
     {
         id:4,
-      name: "Product 3",
-      detail: "Lorem ipsum dolor sit amet",
-      price: "99",
+      name: "Vegetable Soup",
+      detail: "Throws fever away.",
+      price: "5,000 Tsh",
       image: "https://res.cloudinary.com/deex1bwvl/image/upload/v1636020065/samples/food/pot-mussels.jpg"
     },
     {
         id:5,
-      name: "Product 4",
-      detail: "Lorem ipsum dolor sit amet",
-      price: "99",
+      name: "Salmon Stew",
+      detail: "Made with love by the best chefs.",
+      price: "100,000 Tsh",
       image: "https://res.cloudinary.com/deex1bwvl/image/upload/v1636020065/samples/food/fish-vegetables.jpg"
     },
     {
         id:6,
-      name: "Product 5",
-      detail: "Lorem ipsum dolor sit amet",
-      price: "99",
+      name: "Indian Spices",
+      detail: "All the spices in one.",
+      price: "20,000 Tsh",
       image: "https://res.cloudinary.com/deex1bwvl/image/upload/v1636020073/samples/food/spices.jpg"
     },
     {
         id:7,
-      name: "Product 6",
-      detail: "Lorem ipsum dolor sit amet",
-      price: "99",
-      image: "https://res.cloudinary.com/deex1bwvl/image/upload/v1636020073/samples/food/spices.jpg"
+      name: "Cheese Cake",
+      detail: "Made with the best ingredients out there.",
+      price: "10,000 Tsh",
+      image: "https://res.cloudinary.com/deex1bwvl/image/upload/v1636020063/samples/food/dessert.jpg"
     }
   ]
 
