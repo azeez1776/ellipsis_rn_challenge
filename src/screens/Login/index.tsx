@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TextInput, Pressable } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-const Login = () => {
+const Login = ({navigation}) => {
   return (
     <View style={styles.container}>
         <View style={styles.header}>
@@ -29,6 +29,7 @@ const Login = () => {
       </View>
            <View style={styles.btn}>
       <Pressable
+      onPress={() => navigation.navigate('Home')}
         style={({pressed}) => [{backgroundColor:pressed?'#6574e6':'#3546CB'},styles.chat]}
       >
           <Text style={{color:'white', marginLeft:5}}>Sign In</Text>
@@ -54,7 +55,7 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         width:'100%',
-        
+
     },
     header:{
         flex:0.1,
