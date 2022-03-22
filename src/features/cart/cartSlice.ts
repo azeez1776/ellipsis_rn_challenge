@@ -12,7 +12,7 @@ export const cartSlice = createSlice({
             (item) => item.id === action.payload.id
             );
             if(itemIndex>=0){
-                state.cartItems[itemIndex].quantity =+1 ;
+                state.cartItems[itemIndex].quantity += 1 ;
             }
             else{
                 const tempItem = {...action.payload, quantity:1};
